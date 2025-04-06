@@ -41,14 +41,14 @@ const llamaController = async (req, res) => {
     const { text, chatBoatName } = req.body;
 
     if (!chatBoatName) {
-      return res.status(400).json({
+      return res.status(404).json({
         message: "Please provide the assistant's role (chatBoatName).",
       });
     }
 
     if (!text) {
       return res
-        .status(400)
+        .status(404)
         .json({ message: "Text input is required for processing." });
     }
 
